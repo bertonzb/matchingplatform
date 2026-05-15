@@ -2,6 +2,7 @@
   <div id="app">
     <nav>
       <router-link to="/">首页</router-link>
+      <router-link to="/entities">企业管理</router-link>
       <router-link to="/history">历史记录</router-link>
       <router-link to="/monitor">调用监控</router-link>
     </nav>

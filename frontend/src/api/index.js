@@ -18,8 +18,19 @@ export const matchingApi = {
 };
 
 export const knowledgeApi = {
-  createCompany(data) {
-    return api.post('/api/v1/knowledge/companies', data);
+  createEntity(data) {
+    return api.post('/api/v1/knowledge/entities', data);
+  },
+  listEntities(skip = 0, limit = 50, entityType) {
+    return api.get('/api/v1/knowledge/entities', { params: { skip, limit, entity_type: entityType } });
+  },
+  uploadEntities(file) {
+    const formData = new FormData();
+    formData.append('file', file);
+    return api.post('/api/v1/knowledge/entities/upload', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+      timeout: 120000,
+    });
   },
   search(query) {
     return api.post('/api/v1/knowledge/search', { query });

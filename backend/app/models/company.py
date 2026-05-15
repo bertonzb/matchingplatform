@@ -17,6 +17,7 @@ class Company(Base):
     weaviate_uuid: Mapped[str | None] = mapped_column(
         String(36), default=lambda: str(uuid.uuid4())
     )
+    entity_type: Mapped[str] = mapped_column(String(20), default="company")
     created_at: Mapped[datetime] = mapped_column(
         DateTime, server_default=func.getdate()
     )
