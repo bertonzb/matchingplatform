@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port 8000 & celery -A app.tasks.celery_app worker --loglevel=info"]
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port 9010 & celery -A app.tasks.celery_app worker --loglevel=info"]

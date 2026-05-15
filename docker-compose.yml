@@ -4,7 +4,7 @@ services:
   app:
     build: ./backend
     ports:
-      - "8000:8000"
+      - "9010:9010"
     environment:
       - QWEN_API_KEY=${QWEN_API_KEY}
       - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
@@ -51,7 +51,7 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "80:80"
+      - "9000:80"
     depends_on:
       - app
     restart: unless-stopped
